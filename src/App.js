@@ -1,11 +1,30 @@
 import React from 'react'
+//This import is form router
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
+
+//this import is for All Pages
+import{  HomePage,
+  CategoriesPage,
+  ErrorPage,
+  MealDetailPage} from './pages/index';
+
+//import for component
+import Header from './components/Header/Header'
+import Sidebar from './components/Sidebar/SideBar'
 
 function App() {
   return (
-    <div className='bg-dark vh-100'>
-      
-    </div>
-  )
+    <BrowserRouter>
+      <Header/>
+      <Sidebar/>
+      <Routes>
+        <Route path='/' element={<HomePage/>}/>
+        <Route path="/meal/:id" element={<MealDetailPage/>}/>
+        <Route path="/meal/Category/:name" element={<CategoriesPage/>}/>
+        <Route path='*' element={<ErrorPage/>}/>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App
