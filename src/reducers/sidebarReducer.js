@@ -1,5 +1,5 @@
 import{OPEN_SIDEBAR, CLOSE_SIDEBAR} from "../actions/actions";
-
+// import React from 'react'
 const sidebarReducer = (state,action) => {
     switch(action.type){
         case OPEN_SIDEBAR:
