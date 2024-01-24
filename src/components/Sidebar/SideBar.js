@@ -6,7 +6,7 @@ function Sidebar() {
     <div>
       <div
         className={`offcanvas offcanvas-end ${isSidebarOpen ? `show` : ""}`}
-        tabindex="-1"
+        tabIndex="-1"
         id="offcanvas"
         aria-labelledby="offcanvasLabel"
       >
