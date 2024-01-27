@@ -1,7 +1,10 @@
 import React from "react";
 import { useSidebarContext } from "../../context/sidebarContext";
+import { useMealContext } from "../../context/mealContext";
+import { Link } from "react-router-dom";
 function Sidebar() {
   const { isSidebarOpen, closeSidebar } = useSidebarContext();
+  const  {categories} = useMealContext();
   return (
     <div>
       <div
@@ -12,7 +15,7 @@ function Sidebar() {
       >
         <div className="offcanvas-header">
           <h5 className="offcanvas-title" id="offcanvasLabel">
-            Offcanvas
+            Food  Categories
           </h5>
           <button
             type="button"
@@ -23,8 +26,17 @@ function Sidebar() {
           ></button>
         </div>
         <div className="offcanvas-body">
-          Content for the offcanvas goes here. You can place just about any
-          Bootstrap component or custom elements here.
+         <ul className="list-group">
+          {
+            categories.map(category => (
+              <li className="list-group-item border-0 border-bottom lh-base " key={category.idCategory}>
+                <Link className="text-decoration-none text-dark" to={`meal/category${category.strCategory}`} onClick={() => closeSidebar()} >
+                  {category.strCategory}
+                </Link>
+              </li>
+            ))
+          } 
+         </ul>
         </div>
       </div>
     </div>

@@ -1,12 +1,15 @@
 import React from 'react'
 import Navbar from './Navbar'
-
+import SearchForm from './SearchForm'
 function Header() {
   return (
     <header className='header'>
       <Navbar/>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quas libero, eaque dolor enim fugiat consequatur eius distinctio similique ipsum odio labore vero nihil nostrum dolores id repudiandae harum doloribus cum repellat! Velit quos aliquid commodi inventore et illum omnis exercitationem nostrum eveniet quod facilis tempore alias magni nulla ipsum unde cupiditate nihil repudiandae a, impedit eos? Hic temporibus, deserunt vero cupiditate itaque sequi quaerat dolores totam placeat soluta ullam deleniti enim iusto. Beatae ab animi maiores iure expedita repellendus quae adipisci similique, dolores, earum ut. Repellendus, natus. Aperiam earum laboriosam rem alias laudantium fugiat voluptate numquam facilis, culpa ad!</p>
-         
+      <div className='d-flex flex-column justify-content-center align-items-center vh-50 banner'>
+      <SearchForm/>
+      <h1 className='Fw-semibold lh-lg'>What are your favourite cuisines?</h1>
+      <p className='text-uppercase my-3 lh-base'>Personalize your experience</p>
+      </div>
     </header>
   )
 }
