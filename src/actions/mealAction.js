@@ -9,10 +9,13 @@ import {
     FETCH_SINGLE_MEAL_ERROR,
     FETCH_CATEGORY_MEALS_BEGIN,
     FETCH_CATEGORY_MEALS_SUCCESS,
-    FETCH_CATEGORY_MEALS_ERROR
+    FETCH_CATEGORY_MEALS_ERROR,
+    FETCH_MEALS_BEGIN,
+    FETCH_MEALS_SUCCESS,
+    FETCH_MEALS_ERROR
 } from './actions'
 
-import { CATEGORIES_URL, MEAL_CATEGORIES_URL, MEAL_SINGLE_URL } from '../utils/constant'
+import { CATEGORIES_URL, MEAL_CATEGORIES_URL, MEAL_SINGLE_URL, SEARCH_URL } from '../utils/constant'
 
 export const startFetchCategories = async (dispatch) => {
     try {
@@ -43,5 +46,16 @@ export const startFetchMealByCategory = async(dispatch, category) => {
         console.log(response.data)
     }catch(error){
         dispatch({type:FETCH_CATEGORY_MEALS_ERROR, payload: error.message});
+    }
+}
+
+export const startFetchMealBySearch =  async(dispatch, searchTearm) => {
+    try{
+        dispatch({type:FETCH_MEALS_BEGIN});
+        const response = await axios.get(`${SEARCH_URL}${searchTearm}`);
+        dispatch({type: FETCH_MEALS_SUCCESS, payload: response.data.meals})
+
+    } catch (error){
+        dispatch({type: FETCH_MEALS_ERROR, payload:error.message});
     }
 }

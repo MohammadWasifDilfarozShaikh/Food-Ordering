@@ -1,11 +1,11 @@
 import HomePage from "./HomePage/HomePage";
-import CategoriesPage from "./CategoryPage/CategoriesPage";
+import CategoryPage from "./CategoryPage/CategoryPage";
 import ErrorPage from "./ErrorPage/ErrorPage";
 import MealDetailPage from "./MealDetailPage/MealDetailPage";
 
-export{
+export {
     HomePage,
-    CategoriesPage,
+    CategoryPage,
     ErrorPage,
-    MealDetailPage
+    MealDetailPage,
 }

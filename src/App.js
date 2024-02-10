@@ -4,13 +4,13 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom'
 
 //this import is for All Pages
 import{  HomePage,
-  CategoriesPage,
+  CategoryPage,
   ErrorPage,
   MealDetailPage} from './pages/index';
 
 //import for component
 import Header from './components/Header/Header'
-import Sidebar from './components/Sidebar/SideBar'
+import Sidebar from './components/Sidebar/Sidebar'
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage/>}/>
         <Route path="/meal/:id" element={<MealDetailPage/>}/>
-        <Route path="/meal/Category/:name" element={<CategoriesPage/>}/>
+        <Route path="/meal/Category/:name" element={<CategoryPage/>}/>
         <Route path='*' element={<ErrorPage/>}/>
       </Routes>
     </BrowserRouter>

@@ -2,8 +2,8 @@ import React from 'react'
 
 function NotFound() {
   return (
-    <div>
-      
+    <div className='container text-center'>
+      <h1>No Meals Found</h1>
     </div>
   )
 }
